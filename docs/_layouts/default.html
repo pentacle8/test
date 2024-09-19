@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="{{ site.lang | default: " ja" }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="light dark" />
+    <!-- IE互換性のためのおまじない -->
+    <link rel="stylesheet" href="./md/style.css">
+    <script
+        type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    {% seo %}
+</head>
+
+<body>
+    <div class="wrapper">
+        {{ content }}
+    </div>
+</body>
+
+</html>
+<script>
+    let sheets = document.styleSheets
+    let sheet = sheets[sheets.length - 1];
+    let codeElements = document.querySelectorAll("code");
+    for (let i = 0; i < codeElements.length; i++) {
+        let codeElement = codeElements[i]
+        codeElement.parentElement.classList.add("pre" + i)
+
+        // <div class="language-shell highlighter-rouge">
+        // <div class="highlight">
+        // <pre class="highlight">
+        // <code>
+        // から「rust」を抽出
+        clsName = codeElement
+            .parentElement
+            .parentElement
+            .parentElement
+            .className
+        langName = codeElement
+            .parentElement
+            .parentElement
+            .parentElement
+            .className
+            .match(/language-(\S+)\s/)[1]
+
+        sheet.insertRule(
+            `.pre${i}:before { content: "${langName}";}`,
+            sheet.cssRules.length);
+    }
+</script>
