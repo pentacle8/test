@@ -1,10 +1,5 @@
-# _config.yml
-# ソースディレクトリと出力ディレクトリの設定
-# source: 
-# destination: _site
-
 # Markdownとシンタックスハイライターの設定
-markdown: GFM
+markdown: GFM # 表形式に対応
 plugins:
  - jekyll-sitemap
 highlighter: rouge
@@ -14,3 +9,4 @@ rouge:
   enabled: true
   guess_lang: false
   default_lang: rust
+  theme: monokai.sublime

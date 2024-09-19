@@ -2,8 +2,6 @@
 layout: default
 ---
 
-# Welcome to My Jekyll Site
-
 <button class="theme-toggle">Toggle Dark Mode</button>
 
 # 1. 目次
