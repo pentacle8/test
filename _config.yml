@@ -12,6 +12,8 @@ highlighter: rouge
 # kramdownの設定
 kramdown:
   hard_wrap: true
+  input: GFM
+  syntax_highlighter: rouge
 
 # シンタックスハイライトの設定
 rouge:

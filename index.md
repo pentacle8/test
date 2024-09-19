@@ -59,7 +59,7 @@ title: Rust code examples
 
 ### 良い例
 
-   ```Rust
+   ```rust
    
    ```
 
@@ -69,7 +69,7 @@ title: Rust code examples
 
 ### 悪い例
 
-   ```Rust
+   ```rust
 
    ```
 
@@ -93,7 +93,7 @@ title: Rust code examples
 ### 良い例
 `unwrap_or()`, `unwrap_or_default()`, `unwrap_or_else()`を使う
 
-   ```Rust
+   ```rust
     // unwrap_or
     let value = some_option.unwrap_or(10);
 
@@ -115,7 +115,7 @@ title: Rust code examples
 ### 悪い例
 `unwrap()`を使う
 
-   ```Rust
+   ```rust
     // unwrap
     let value = some_option.unwrap();
    ```
@@ -140,7 +140,7 @@ title: Rust code examples
 
 ### 良い例
 `format!`を使い、文字列を連結する
-   ```Rust
+   ```rust
     fn main() {
         let s1 = String::from("Hello");
         let s2 = String::from("World");
@@ -154,7 +154,7 @@ title: Rust code examples
 
 ### 悪い例
 演算子を多用して文字列を連結する<br> 
-   ```Rust
+   ```rust
     fn main() {
         let s1 = String::from("Hello");
         let s2 = String::from("World");
@@ -186,7 +186,7 @@ title: Rust code examples
 ### 良い例
 適切にエラー処理を行う
 
-   ```Rust
+   ```rust
     let strings = vec!["1", "2", "three", "4"];
     let numbers: Vec<Result<i32, _>> = strings.iter().map(|s| s.parse::<i32>()).collect();
     for result in numbers {
@@ -203,7 +203,7 @@ title: Rust code examples
 
 ### 悪い例
 なんでも`unwrap_or_default()`を使う<br>
-   ```Rust
+   ```rust
     let strings = vec!["1", "2", "three", "4"];
     let numbers: Vec<i32> = strings.iter().map(|s| s.parse::<i32>().unwrap_or_default()).collect();
     println!("{:?}", numbers); // [1, 2, 0, 4]
@@ -229,7 +229,7 @@ Rustに限りませんが、capacityが事前にわかる場合は容量を予�
 
 ### 良い例
 Vec::with_capacity を使って必要なメモリ容量を事前に予約する。
-   ```Rust
+   ```rust
     let size = 10;
     let mut vec = Vec::with_capacity(size);
     for i in 0..size {
@@ -243,7 +243,7 @@ Vec::with_capacity を使って必要なメモリ容量を事前に予約する�
 
 ### 悪い例
 容量を事前に確保せず、頻繁にメモリ再割り当てが発生する。
-   ```Rust
+   ```rust
     let size = 10;
     let mut vec = Vec::new();
     for i in 0..size {
@@ -271,7 +271,7 @@ Vec::with_capacity を使って必要なメモリ容量を事前に予約する�
 ### 良い例
 可能な限り値を借用し、ムーブを避ける。
 
-   ```Rust
+   ```rust
     fn print_value(value: &i32) {
         println!("{}", value);
     }
@@ -286,7 +286,7 @@ Vec::with_capacity を使って必要なメモリ容量を事前に予約する�
 ### 悪い例
 値を不必要にムーブする。
 
-   ```Rust
+   ```rust
     fn print_value(value: i32) {
         println!("{}", value);
     }
@@ -313,7 +313,7 @@ Vec::with_capacity を使って必要なメモリ容量を事前に予約する�
 
 ### 良い例
 `&str`を使い、余計なアロケーションを避ける。
-   ```Rust
+   ```rust
     fn greet(name: &str) {
         println!("Hello, {}!", name);
     }
@@ -327,7 +327,7 @@ Vec::with_capacity を使って必要なメモリ容量を事前に予約する�
 
 ### 悪い例
 不要に`String`を生成する。
-   ```Rust
+   ```rust
     fn greet(name: String) {
         println!("Hello, {}!", name);
     }
@@ -353,7 +353,7 @@ Vec::with_capacity を使って必要なメモリ容量を事前に予約する�
 
 ### 良い例
 test アトリビュートを使ってtestコードを分ける。
-   ```Rust
+   ```rust
     // メインのコード
     fn add(a: i32, b: i32) -> i32 {
         a + b
@@ -377,7 +377,7 @@ test アトリビュートを使ってtestコードを分ける。
 
 ### 悪い例
 内部でtestコードを実装する。
-   ```Rust
+   ```rust
     // メインのコード
     fn add(a: i32, b: i32) -> i32 {
         a + b
@@ -414,7 +414,7 @@ Rustのコンパイラはこの競合を検出できないため、ご注意く�
 
 ### 良い例
 `Arc`, `Mutex` を使ってスレッド間で安全にデータを共有する。
-   ```Rust
+   ```rust
     use std::sync::{Arc, Mutex};
     use std::thread;
 
@@ -438,7 +438,7 @@ Rustのコンパイラはこの競合を検出できないため、ご注意く�
 
 ### 悪い例
 `Arc`, `Mutex` を使わずスレッド間データを操作する。
-   ```Rust
+   ```rust
     let mut data = 0;
     let handles: Vec<_> = (0..10).map(|_| {
         thread::spawn(move || {
@@ -472,7 +472,7 @@ Rustのコンパイラはこの競合を検出できないため、ご注意く�
 
 ### 良い例
 clone()を使わず&strに変換し、比較する
-   ```Rust
+   ```rust
     let option_string: Option<String> = Some("a");
     let string: String = String::from("b");
 
@@ -487,7 +487,7 @@ clone()を使わず&strに変換し、比較する
 
 ### 悪い例
 clone()を使ってStringで比較する
-   ```Rust
+   ```rust
     let option_string: Option<String> = Some("a");
     let string: String = String::from("b");
 
@@ -510,7 +510,7 @@ Rustではクロージャを使うとスッキリ書けます。ご活用くだ�
 
 ### 良い例
 クロージャによりコードを簡潔にし、柔軟性を持たせることができる。
-   ```Rust
+   ```rust
 fn main() {
     let numbers = vec![1, 2, 3, 4, 5, 6];
     let even_numbers: Vec<i32> = numbers.into_iter().filter(|&x| x % 2 == 0).collect();
@@ -524,7 +524,7 @@ fn main() {
 
 ### 悪い例
 同じ処理を行うために冗長なコードを書く。
-   ```Rust
+   ```rust
 fn main() {
     let numbers = vec![1, 2, 3, 4, 5, 6];
     let mut even_numbers = Vec::new();
@@ -552,7 +552,7 @@ fn main() {
 
 ### 良い例
 クロージャで一時的な参照を取得して操作する。
-   ```Rust
+   ```rust
 let mut num = 0;
 let mut add = |x| num += x;
 add(5);
@@ -567,7 +567,7 @@ println!("{}", num); // 5
 ### 悪い例
 関数を使って直接操作し、可変参照を渡す。
 
-   ```Rust
+   ```rust
 fn add(num: &mut i32, x: i32) {
     *num += x;
 }
@@ -600,7 +600,7 @@ println!("{}", num); // 5
 
 ### 良い例
 
-   ```Rust
+   ```rust
 fn main() {
     let vec = vec![1, 2, 3, 4, 5];
 
@@ -621,7 +621,7 @@ fn main() {
 
 ### 悪い例
 
-   ```Rust
+   ```rust
 fn main() {
     let vec = vec![1, 2, 3, 4, 5];
     let cloned_vec = vec.clone(); // Vec全体をクローン
@@ -653,7 +653,7 @@ fn main() {
 
 ### 良い例
 reserve_exactで追加のメモリ容量を確保する
-   ```Rust
+   ```rust
 struct Hoge {
     x: i32,
     data: Vec<i32>, // 任意のサイズ
@@ -681,7 +681,7 @@ fn main() {
 
 ### 悪い例
 容量を追加で確保せず、頻繁にメモリ再割り当てが発生する
-   ```Rust
+   ```rust
 struct Hoge {
     x: i32,
     data: Vec<i32>, // 任意のサイズ
@@ -723,7 +723,7 @@ fn main() {
 
 ### 良い例
 キャッシュを利用して重複計算を避ける。
-   ```Rust
+   ```rust
 use std::collections::HashMap;
 
 fn fib(n: u32, memo: &mut HashMap<u32, u32>) -> u32 {
@@ -743,7 +743,7 @@ fn fib(n: u32, memo: &mut HashMap<u32, u32>) -> u32 {
 
 ### 悪い例
 キャッシュを使用せず、計算を繰り返す。
-   ```Rust
+   ```rust
 fn fib(n: u32) -> u32 {
     if n <= 1 {
         return n;
@@ -772,7 +772,7 @@ Rustだとより簡潔に書けます！`Option`, `Result`型を使っていき�
 
 ### 良い例
 エラーを事前に確認して早期リターン。
-   ```Rust
+   ```rust
 fn process(data: Option<&str>) -> Result<(), &'static str> {
     let data = data.ok_or("No data provided")?;
     // データ処理
@@ -787,7 +787,7 @@ fn process(data: Option<&str>) -> Result<(), &'static str> {
 
 ### 悪い例
 不要なエラーチェックを重複して行う。
-   ```Rust
+   ```rust
 fn process(data: Option<&str>) -> Result<(), &'static str> {
     if data.is_none() {
         return Err("No data provided");
@@ -821,7 +821,7 @@ Result型を使うことで、エラーの種類や内容を柔軟に変更で�
 ### 良い例
 Resultで返す。
 
-   ```Rust
+   ```rust
     async fn load(&mut self) -> Result<(), Box<dyn Error>> {
         // ファイルパスを取得
         let filepath = match env::current_exe() {
@@ -868,7 +868,7 @@ Resultで返す。
 ### 悪い例
 boolで返して都度エラーハンドリングを行う
 
-   ```Rust
+   ```rust
     async fn load(&mut self) -> bool {
         // ファイルパスを取得
         let filepath = match env::current_exe() {
@@ -929,7 +929,7 @@ boolで返して都度エラーハンドリングを行う
 
 ### 良い例
 `?` 演算子を使ってエラー処理を簡素化する。
-   ```Rust
+   ```rust
 fn read_file(path: &str) -> Result<String, std::io::Error> {
     let mut file = File::open(path)?;
     let mut contents = String::new();
@@ -944,7 +944,7 @@ fn read_file(path: &str) -> Result<String, std::io::Error> {
 
 ### 悪い例
 手動でエラーパターンを処理する。
-   ```Rust
+   ```rust
 fn read_file(path: &str) -> Result<String, std::io::Error> {
     let mut file = match File::open(path) {
         Ok(file) => file,
@@ -981,7 +981,7 @@ fn read_file(path: &str) -> Result<String, std::io::Error> {
 
 ### 良い例
 anyhowクレートを使い、エラーチェーンを使って詳細なエラー情報を伝える。
-   ```Rust
+   ```rust
 use anyhow::{Context, Result};
 
 fn read_config(path: &str) -> Result<String> {
@@ -997,7 +997,7 @@ fn read_config(path: &str) -> Result<String> {
 
 ### 悪い例
 標準エラーメッセージをそのまま使う
-   ```Rust
+   ```rust
 use std::{fs, io};
 
 fn read_config(path: &str) -> Result<String, io::Error> {
@@ -1023,7 +1023,7 @@ fn read_config(path: &str) -> Result<String, io::Error> {
 
 ### 良い例
 
-   ```Rust
+   ```rust
 struct User {
     name: String,
     age: u32,
@@ -1047,7 +1047,7 @@ fn main() {
 
 ### 悪い例
 
-   ```Rust
+   ```rust
 struct User {
     name: String,
     age: u32,
@@ -1091,7 +1091,7 @@ Option::ok_orはエラーではないときにもok_orの中が評価されま�
 
 ### 良い例
 `ok_or_else`を使う
-   ```Rust
+   ```rust
 fn generate_error_message() -> String {
     // 高コストな処理をシミュレート
     std::thread::sleep(std::time::Duration::from_secs(2));
@@ -1109,7 +1109,7 @@ println!("{:?}", result); // Err("Error occurred")
 
 ### 悪い例
 `ok_or`を使う
-   ```Rust
+   ```rust
 fn generate_error_message() -> String {
     // 高コストな処理をシミュレート
     std::thread::sleep(std::time::Duration::from_secs(2));
@@ -1151,7 +1151,7 @@ Rustの標準ライブラリや多くのクレートはスライスを受け取�
 
 ### 良い例
 
-   ```Rust
+   ```rust
 fn print_elements(slice: &[i32]) {
     for &item in slice {
         println!("{}", item);
@@ -1174,7 +1174,7 @@ fn main() {
 
 ### 悪い例
 
-   ```Rust
+   ```rust
 fn print_elements(vec: &Vec<i32>) {
     for &item in vec {
         println!("{}", item);
@@ -1207,7 +1207,7 @@ fn main() {
 
 ### 良い例
 Path を使ってファイルパスを扱う。
-   ```Rust
+   ```rust
 fn open_file(path: &str) {
     println!("Opening file: {}", path);
 }
@@ -1219,7 +1219,7 @@ fn open_file(path: &str) {
 
 ### 悪い例
 文字列リテラルや String を直接渡す。
-   ```Rust
+   ```rust
 use std::path::Path;
 
 fn open_file<P: AsRef<Path>>(path: P) {
@@ -1242,7 +1242,7 @@ fn open_file<P: AsRef<Path>>(path: P) {
 
 ### 良い例
 `BufReader` や `BufWriter` を使ってファイルI/Oを効率化する。<br><br><br>
-   ```Rust
+   ```rust
 use std::fs::File;
 use std::io::{self, BufReader, BufWriter, Write, Read};
 
@@ -1270,7 +1270,7 @@ fn main() -> io::Result<()> {
 直接ファイル操作を行い、パフォーマンスが低下する。<br>
 ※例のコードでは、直接ファイル操作を行っています。<br>
 バッファリングを行わないため、I/O操作の回数が増え、パフォーマンスが低下します。
-   ```Rust
+   ```rust
 use std::fs::File;
 use std::io::{self, Write, Read};
 
@@ -1310,7 +1310,7 @@ fn main() -> io::Result<()> {
 ### 良い例
 `map_or` を使ってデフォルト値を設定する。
 
-   ```Rust
+   ```rust
 let maybe_num = Some(2);
 let result = maybe_num.map_or(10, |x| x * 2);
 println!("{}", result); // 4
@@ -1322,7 +1322,7 @@ println!("{}", result); // 4
 
 ### 悪い例
 `match` でデフォルト値を設定する。
-   ```Rust
+   ```rust
 let maybe_num = Some(2);
 let result = match maybe_num {
     Some(x) => x * 2,
@@ -1356,7 +1356,7 @@ println!("{}", result); // 4
 
 ### 良い例
 `Rc` や `Arc` を使って共有所有権を持つ。
-   ```Rust
+   ```rust
 use std::rc::Rc;
 use std::sync::Arc;
 use std::thread;
@@ -1386,7 +1386,7 @@ fn main() {
 
 ### 悪い例
 直接 `Box` を使い、不必要なコピーを作る。
-   ```Rust
+   ```rust
 fn main() {
     // Boxを使った例
     let box_example = Box::new(String::from("Hello, Box!"));
@@ -1411,7 +1411,7 @@ Condvar（条件変数）を使って、スレッドが特定の条件が満た�
 
 ### 良い例
 `Mutex` と `Condvar` を使ってスレッドの待機と通知を効率的に行う。
-   ```Rust
+   ```rust
 use std::sync::{Arc, Mutex, Condvar};
 use std::thread;
 
@@ -1438,7 +1438,7 @@ while !*started {
 
 ### 悪い例
 スリープを使った不確実な待機をし、同期も不確実
-   ```Rust
+   ```rust
 use std::sync::{Arc, Mutex};
 use std::thread;
 use std::time::Duration;
@@ -1472,7 +1472,7 @@ rustではスコープを抜ければ自動でメモリ開放しますが、<br>
 
 ### 良い例
 明示的に開放する。
-   ```Rust
+   ```rust
     {
         let file = std::fs::File::open("example.txt").unwrap();
         // ファイルを使用する処理
@@ -1488,7 +1488,7 @@ rustではスコープを抜ければ自動でメモリ開放しますが、<br>
 ### 悪い例
 (スコープを抜けて自動的に開放されるまで、) 開放しない。
 
-   ```Rust
+   ```rust
     {
         let file = std::fs::File::open("example.txt").unwrap();
         // ファイルを使用する処理
@@ -1512,7 +1512,7 @@ rustではスコープを抜ければ自動でメモリ開放しますが、<br>
 
 ### 良い例
 タイムアウト付きで同期操作を行う。
-   ```Rust
+   ```rust
 use std::sync::{Arc, Mutex, Condvar};
 use std::time::Duration;
 
@@ -1541,7 +1541,7 @@ if !*result.0 {
 
 ### 悪い例
 タイムアウトなしで待ち続けてしまう。
-   ```Rust
+   ```rust
 use std::sync::{Arc, Mutex, Condvar};
 
 let pair = Arc::new((Mutex::new(false), Condvar::new()));
@@ -1577,7 +1577,7 @@ Rustに限らず基本的なことですが、意外と見落としがちで地�
 
 ### 良い例
 ループ外で変換処理を行う
-   ```Rust
+   ```rust
     // ループ外で変換処理
     let fixed_name = PartType::to_part_name(r#type);
 
@@ -1595,7 +1595,7 @@ Rustに限らず基本的なことですが、意外と見落としがちで地�
 
 ### 悪い例
 ループ内で変換処理を行う（無駄に複数回実行される）
-   ```Rust
+   ```rust
     for x in &name_list {
         // ループ内で変換処理
         if x.name == PartType::to_part_name(r#name) 
@@ -1637,7 +1637,7 @@ Rustに限らず基本的なことですが、意外と見落としがちで地�
 
 ## 例1. `#[derive(Default)]`で実装
 
-   ```Rust
+   ```rust
 #[derive(Default)]
 struct Config {
     name: String,
@@ -1652,7 +1652,7 @@ struct Config {
 
 ## 例2. カスタマイズ`Default`実装
 
-   ```Rust
+   ```rust
 // #[derive(Default)]は外す
 struct Config {
     name: String,
@@ -1710,7 +1710,7 @@ impl Default for Config {
 
 ## 例1. Copyトレイトの利用
 
-   ```Rust
+   ```rust
 #[derive(Copy, Clone)]
 struct Point {
     x: i32,
@@ -1731,7 +1731,7 @@ fn main() {
 
 ## 例2. Cloneトレイトの利用
 
-   ```Rust
+   ```rust
 #[derive(Clone)]
 struct Person {
     name: String,
