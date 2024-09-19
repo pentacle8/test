@@ -5,14 +5,29 @@
   }
   
   /* Dark mode */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg-color: #000000;
-      --text-color: #ffffff;
-    }
+  :root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
   }
   
   body {
     background-color: var(--bg-color);
     color: var(--text-color);
   }
+  
+  /* Rouge code highlighting */
+  pre {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+  
+  code {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+  
