@@ -1,7 +1,7 @@
 # _config.yml
 # ソースディレクトリと出力ディレクトリの設定
-source: docs
-destination: _site
+# source: 
+# destination: _site
 
 # Markdownとシンタックスハイライターの設定
 markdown: kramdown
@@ -13,3 +13,8 @@ highlighter: rouge
 kramdown:
   hard_wrap: true
 
+# シンタックスハイライトの設定
+rouge:
+  enabled: true
+  guess_lang: false
+  default_lang: rust
