@@ -1,7 +1,5 @@
 # _config.yml
 # ソースディレクトリと出力ディレクトリの設定
-# source: 
-# destination: _site
 
 # Markdownとシンタックスハイライターの設定
 markdown: kramdown
