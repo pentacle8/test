@@ -1,7 +1,3 @@
----
-layout: default
-title: Rust code examples
----
 
 # 1. 目次
 - [1. Must 要件](#1-must-要件)
@@ -1768,49 +1764,49 @@ fn main() {
 
 # 4. リンク集
 ### まずはここから!!
-|  Link  |  Contents  |
+| Link | Contents |
 | ---- | ---- |
-|  [Rust-Coding-Rule](https://github.com/Yamaha-Motor-Robotics-SMT-Software/Rust-Coding-Rule) | 社内で統一しているコーディングルールです。<br>プロジェクトを作成する場合は必ず則ってください。 |
+| [Rust-Coding-Rule](https://github.com/Yamaha-Motor-Robotics-SMT-Software/Rust-Coding-Rule) | 社内で統一しているコーディングルールです。<br>プロジェクトを作成する場合は必ず則ってください。|
 
 ### まとめサイト
-|  Link  |  Contents  |
+| Link | Contents |
 | ---- | ---- |
-|  [Rustのリンク集](https://qiita.com/mosh/items/7e327dafbe53b72ad99d) |  学習向けや、実装時に参照するサイト、書き方、新機能の情報などのページがまとめられています  |
-|  [Rust の学習に役立つサイト](https://qiita.com/shikuno_dev/items/d8b832294b152877b80d) |  学習～実践向けのサイトが載っています  |
-|  [Rustを始める時に役立つ資料](https://qiita.com/kxkx5150/items/ff70c564c5c136ba3d25) |  メモリ管理、所有権、文字列操作、イテレータ、非同期など一通りの学習項目に役立つ資料がまとまっています  |
-|  [Linux系OSとRustで参考になる記事一覧](https://zenn.dev/ennui_lw/scraps/ee26125bb72563) |  数は少ないですが良い記事が多いです!  |
+| [Rustのリンク集](https://qiita.com/mosh/items/7e327dafbe53b72ad99d) |  学習向けや、実装時に参照するサイト、書き方、新機能の情報などのページがまとめられています |
+| [Rust の学習に役立つサイト](https://qiita.com/shikuno_dev/items/d8b832294b152877b80d) |  学習～実践向けのサイトが載っています |
+| [Rustを始める時に役立つ資料](https://qiita.com/kxkx5150/items/ff70c564c5c136ba3d25) |  メモリ管理、所有権、文字列操作、イテレータ、非同期など一通りの学習項目に役立つ資料がまとまっています |
+| [Linux系OSとRustで参考になる記事一覧](https://zenn.dev/ennui_lw/scraps/ee26125bb72563) |  数は少ないですが良い記事が多いです! |
 
 ### 学習
-|  Link  |  Contents  |
+| Link | Contents |
 | ---- | ---- |
-|  [Rust ツアー - Let's go on an adventure!](https://tourofrust.com/00_ja.html)  |  入門サイト。Rustの基本的な文法を実際にサイト内でコードを実行しながら学ぶことができます。 |
-|  [Rustの日本語ドキュメント/Japanese Docs for Rust](https://doc.rust-jp.rs/)  |  Rustの公式ドキュメントです。網羅的ですが冗長で少々わかりにくいので、次のRust入門がおすすめです。  |
-|  [Rust入門](https://zenn.dev/mebiusbox/books/22d4c1ed9b0003)  |  日本語で分かりやすく解説されたドキュメントです。  |
-|  [100 Exercises To Learn Rust に挑戦 ](https://qiita.com/namn1125/items/bd1b4cd028874189a3c1) | Rustの100本ノックに挑戦した技術ブログです。 |
+| [Rust ツアー - Let's go on an adventure!](https://tourofrust.com/00_ja.html)  |  入門サイト。Rustの基本的な文法を実際にサイト内でコードを実行しながら学ぶことができます。 |
+| [Rustの日本語ドキュメント/Japanese Docs for Rust](https://doc.rust-jp.rs/)  |  Rustの公式ドキュメントです。網羅的ですが冗長で少々わかりにくいので、次のRust入門がおすすめです。  |
+| [Rust入門](https://zenn.dev/mebiusbox/books/22d4c1ed9b0003)  |  日本語で分かりやすく解説されたドキュメントです。 |
+| [100 Exercises To Learn Rust に挑戦 ](https://qiita.com/namn1125/items/bd1b4cd028874189a3c1) | Rustの100本ノックに挑戦した技術ブログです。 |
 
 ### 他言語で慣れている方向け
-|  Link  |  Contents  |
+| Link | Contents |
 | ---- | ---- |
-|  [C++erのためのRust入門(未完)](https://qiita.com/EqualL2/items/a232ab0855f145bd5997) | C++ ⇒ Rust入門 |
-|  [Rust for C#/.NET Developers](https://microsoft.github.io/rust-for-dotnet-devs/latest/) | C# ⇒ Rust入門<br>C# からの置き換えで役に立ちました。<br>特に11.1にある LinQ の対応表は助かりました。 |
-|  [[翻訳] Python プログラマーのための Rust 入門](https://qiita.com/t2y/items/434854fab16159a7c0f7) | Python ⇒ Rust入門 |
+| [C++erのためのRust入門(未完)](https://qiita.com/EqualL2/items/a232ab0855f145bd5997) | C++ ⇒ Rust入門 |
+| [Rust for C#/.NET Developers](https://microsoft.github.io/rust-for-dotnet-devs/latest/) | C# ⇒ Rust入門<br>C# からの置き換えで役に立ちました。<br>特に11.1にある LinQ の対応表は助かりました。 |
+| [[翻訳] Python プログラマーのための Rust 入門](https://qiita.com/t2y/items/434854fab16159a7c0f7) | Python ⇒ Rust入門 |
 
 ### チートシート
-|  Link  |  Contents  |
+| Link | Contents |
 | ---- | ---- |
-|  [Rust Language Cheat Sheet](https://cheats.rs/) | Rustに慣れてからも役に立つチートシートです |
-|  [Rust の型変換イディオム](https://qiita.com/legokichi/items/0f1c592d46a9aaf9a0ea) | String, Vec, Option, Result等の型変換からC++文字列との型変換まで載っています |
+| [Rust Language Cheat Sheet](https://cheats.rs/) | Rustに慣れてからも役に立つチートシートです |
+| [Rust の型変換イディオム](https://qiita.com/legokichi/items/0f1c592d46a9aaf9a0ea) | String, Vec, Option, Result等の型変換からC++文字列との型変換まで載っています |
 
 ### パフォーマンス
-|  Link  |  Contents  |
+| Link | Contents |
 | ---- | ---- |
-|  [The Rust Performance Book](https://nnethercote.github.io/perf-book/introduction.html) | パフォーマンスを上げるための方法、代替案などが記載されています。 |
-|  [Rust のパフォーマンスに何が影響を与えているのか](https://qiita.com/benki/items/ee14ee6cb9f209a080e1) | 4つのテーマについて実際にパフォーマンスを計測し比較した記事です |
+| [The Rust Performance Book](https://nnethercote.github.io/perf-book/introduction.html) | パフォーマンスを上げるための方法、代替案などが記載されています。 |
+| [Rust のパフォーマンスに何が影響を与えているのか](https://qiita.com/benki/items/ee14ee6cb9f209a080e1) | 4つのテーマについて実際にパフォーマンスを計測し比較した記事です |
 
 ### 環境
-|  Link  |  Contents  |
+| Link | Contents |
 | ---- | ---- |
-|  [crates.io](https://crates.io/) | Rustのクレートのデフォルトリポジトリです。<br>ここからクレートを検索します|
-|  [docs.rs](https://docs.rs/) | Rustのクレートのドキュメント集です |
-|  [Rustの便利クレート](https://qiita.com/qryxip/items/7c16ab9ef3072c1d7199) | 便利になるクレートだけでなく、技術的課題を解決するためのクレートにも触れています |
-|  [Rust開発時の便利ツールたち](https://zenn.dev/toru3/articles/14312f4dbf18b6) | 名前の通りです。<br>フォーマッタについては上記コーディングルールの方を優先してください。 |
+| [crates.io](https://crates.io/) | Rustのクレートのデフォルトリポジトリです。<br>ここからクレートを検索します |
+| [docs.rs](https://docs.rs/) | Rustのクレートのドキュメント集です |
+| [Rustの便利クレート](https://qiita.com/qryxip/items/7c16ab9ef3072c1d7199) | 便利になるクレートだけでなく、技術的課題を解決するためのクレートにも触れています |
+| [Rust開発時の便利ツールたち](https://zenn.dev/toru3/articles/14312f4dbf18b6) | 名前の通りです。<br>フォーマッタについては上記コーディングルールの方を優先してください。 |
