@@ -1,6 +1,3 @@
----
-layout: default
----
 
 <button class="theme-toggle">Toggle Dark Mode</button>
 
